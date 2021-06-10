@@ -8,7 +8,9 @@ import org.springframework.stereotype.Repository;
 import it.objectmethod.ecommercedto.entity.OrderRow;
 
 @Repository
-public interface OrderRowRepository extends JpaRepository<OrderRow, Integer> {
+public interface OrderRowRepository extends JpaRepository<OrderRow, Long> {
 
-	public List<OrderRow> findByArticleIdArticle(Integer idArticle);
+	public List<OrderRow> findByArticleIdArticle(Long idArticle);
+
+	public List<OrderRow> findByOrderUserId(Long idUser);
 }

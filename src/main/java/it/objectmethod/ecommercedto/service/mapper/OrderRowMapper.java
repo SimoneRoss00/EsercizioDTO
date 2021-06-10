@@ -12,14 +12,17 @@ public interface OrderRowMapper extends EntityMapper<OrderRowDTO, OrderRow> {
 	@Override
 	@Mapping(source = "idOrderRow", target = "orderRowId")
 	@Mapping(source = "quantityOrder", target = "quantity")
-	@Mapping(source = "article.articleName", target = "articleNme")
+	@Mapping(source = "article.articleName", target = "articleName")
+	@Mapping(source = "order.orderDate", target = "orderDate")
+	@Mapping(source = "order.numberOrder", target = "orderCode")
+	@Mapping(source = "order.orderId", target = "orderId")
 	public OrderRowDTO toDto(OrderRow entity);
 
 	@Override
 	@Mapping(target = "order", ignore = true)
 	@Mapping(source = "orderRowId", target = "idOrderRow")
 	@Mapping(source = "quantity", target = "quantityOrder")
-	@Mapping(source = "articleNme", target = "article.articleName")
+	@Mapping(source = "articleName", target = "article.articleName")
 	public OrderRow toEntity(OrderRowDTO dto);
 
 }

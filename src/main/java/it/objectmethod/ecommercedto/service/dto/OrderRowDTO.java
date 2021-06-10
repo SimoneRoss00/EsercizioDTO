@@ -2,17 +2,23 @@ package it.objectmethod.ecommercedto.service.dto;
 
 public class OrderRowDTO {
 
-	private Integer orderRowId;
+	private Long orderRowId;
 
 	private Integer quantity;
 
-	private String articleNme;
+	private String articleName;
 
-	public Integer getOrderRowId() {
+	private String orderDate;
+
+	private String orderCode;
+
+	private Long orderId;
+
+	public Long getOrderRowId() {
 		return orderRowId;
 	}
 
-	public void setOrderRowId(Integer orderRowId) {
+	public void setOrderRowId(Long orderRowId) {
 		this.orderRowId = orderRowId;
 	}
 
@@ -24,12 +30,36 @@ public class OrderRowDTO {
 		this.quantity = quantity;
 	}
 
-	public String getArticleNme() {
-		return articleNme;
+	public String getArticleName() {
+		return articleName;
 	}
 
-	public void setArticleNme(String articleNme) {
-		this.articleNme = articleNme;
+	public void setArticleName(String articleName) {
+		this.articleName = articleName;
+	}
+
+	public String getOrderDate() {
+		return orderDate;
+	}
+
+	public void setOrderDate(String orderDate) {
+		this.orderDate = orderDate;
+	}
+
+	public String getOrderCode() {
+		return orderCode;
+	}
+
+	public void setOrderCode(String orderCode) {
+		this.orderCode = orderCode;
+	}
+
+	public Long getOrderId() {
+		return orderId;
+	}
+
+	public void setOrderId(Long orderId) {
+		this.orderId = orderId;
 	}
 
 }

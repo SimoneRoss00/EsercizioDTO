@@ -1,7 +1,5 @@
 package it.objectmethod.ecommercedto.service;
 
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,14 +18,11 @@ public class UserService {
 	@Autowired
 	private UserMapper userMapper;
 
-	public UserDTO loginUser(CompleteUserDTO completeUser, HttpServletResponse response) {
+	public UserDTO loginUser(CompleteUserDTO completeUser) {
 		String userName = completeUser.getUserName();
 		String password = completeUser.getPassword();
 		User user = userRepo.findByUserNameAndPassword(userName, password);
 		UserDTO userDTO = userMapper.toDto(user);
-		if (userDTO == null) {
-			response.setStatus(HttpServletResponse.SC_BAD_REQUEST);
-		}
 		return userDTO;
 	}
 

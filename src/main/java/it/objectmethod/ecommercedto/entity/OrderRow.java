@@ -15,7 +15,7 @@ public class OrderRow {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "id_riga_ordine")
-	private Integer idOrderRow;
+	private Long idOrderRow;
 
 	@Column(name = "quantita")
 	private Integer quantityOrder;
@@ -28,11 +28,11 @@ public class OrderRow {
 	@JoinColumn(name = "id_ordine")
 	private Order order;
 
-	public Integer getIdOrderRow() {
+	public Long getIdOrderRow() {
 		return idOrderRow;
 	}
 
-	public void setIdOrderRow(Integer idOrderRow) {
+	public void setIdOrderRow(Long idOrderRow) {
 		this.idOrderRow = idOrderRow;
 	}
 

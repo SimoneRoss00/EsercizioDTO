@@ -6,8 +6,8 @@ import org.springframework.stereotype.Repository;
 import it.objectmethod.ecommercedto.entity.Cart;
 
 @Repository
-public interface CartRepository extends JpaRepository<Cart, Integer> {
+public interface CartRepository extends JpaRepository<Cart, Long> {
 
-	public Cart findByuserId(Integer userId);
+	public Cart findByUserId(Long userId);
 
 }

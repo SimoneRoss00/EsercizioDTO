@@ -1,6 +1,5 @@
 package it.objectmethod.ecommercedto.entity;
 
-import java.util.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -22,7 +21,7 @@ public class Order {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "id_ordine")
-	private Integer orderId;
+	private Long orderId;
 
 	@Column(name = "numero_ordine")
 	private String numberOrder;
@@ -32,17 +31,17 @@ public class Order {
 	private User user;
 
 	@Column(name = "data_ordine")
-	private Date orderDate;
+	private String orderDate;
 
 	@JsonIgnore
 	@OneToMany
 	private List<OrderRow> orderRowList;
 
-	public Integer getOrderId() {
+	public Long getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(Integer orderId) {
+	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
 
@@ -62,19 +61,20 @@ public class Order {
 		this.user = user;
 	}
 
-	public Date getOrderDate() {
+	public String getOrderDate() {
 		return orderDate;
 	}
 
-	public void setOrderDate(Date orderDate) {
+	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
 
-	/*
-	 * public List<OrderRow> getOrderRowList() { return orderRowList; }
-	 * 
-	 * public void setOrderRowList(List<OrderRow> orderRowList) { this.orderRowList
-	 * = orderRowList; }
-	 */
+	public List<OrderRow> getOrderRowList() {
+		return orderRowList;
+	}
+
+	public void setOrderRowList(List<OrderRow> orderRowList) {
+		this.orderRowList = orderRowList;
+	}
 
 }

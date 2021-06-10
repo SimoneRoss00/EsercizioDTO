@@ -1,27 +1,21 @@
 package it.objectmethod.ecommercedto.service.dto;
 
+import it.objectmethod.ecommercedto.entity.Article;
+
 public class CartDetailDTO {
 
-	private Integer cartDetailId;
-
-	private String articleName;
+	private Long cartDetailId;
 
 	private Integer cartQuantity;
 
-	public Integer getCartDetailId() {
+	private Article article;
+
+	public Long getCartDetailId() {
 		return cartDetailId;
 	}
 
-	public void setCartDetailId(Integer cartDetailId) {
+	public void setCartDetailId(Long cartDetailId) {
 		this.cartDetailId = cartDetailId;
-	}
-
-	public String getArticleName() {
-		return articleName;
-	}
-
-	public void setArticleName(String articleName) {
-		this.articleName = articleName;
 	}
 
 	public Integer getCartQuantity() {
@@ -30,6 +24,14 @@ public class CartDetailDTO {
 
 	public void setCartQuantity(Integer cartQuantity) {
 		this.cartQuantity = cartQuantity;
+	}
+
+	public Article getArticle() {
+		return article;
+	}
+
+	public void setArticle(Article article) {
+		this.article = article;
 	}
 
 }

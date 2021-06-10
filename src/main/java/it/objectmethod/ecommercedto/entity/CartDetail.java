@@ -9,6 +9,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 @Table(name = "carrello_dettaglio")
 public class CartDetail {
@@ -16,8 +18,9 @@ public class CartDetail {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "id_carrello_dettaglio")
-	private Integer cartDetailId;
+	private Long cartDetailId;
 
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "id_carrello")
 	private Cart cart;
@@ -29,11 +32,11 @@ public class CartDetail {
 	@JoinColumn(name = "id_articolo")
 	private Article article;
 
-	public Integer getCartDetailId() {
+	public Long getCartDetailId() {
 		return cartDetailId;
 	}
 
-	public void setCartDetailId(Integer cartDetailId) {
+	public void setCartDetailId(Long cartDetailId) {
 		this.cartDetailId = cartDetailId;
 	}
 

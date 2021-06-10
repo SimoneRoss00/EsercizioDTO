@@ -8,9 +8,11 @@ import org.springframework.stereotype.Repository;
 import it.objectmethod.ecommercedto.entity.CartDetail;
 
 @Repository
-public interface CartDetailRepository extends JpaRepository<CartDetail, Integer> {
+public interface CartDetailRepository extends JpaRepository<CartDetail, Long> {
 
-	public List<CartDetail> findByCartCartId(Integer cartId);
+	public List<CartDetail> findByCartUserId(Long userId);
 
-	public CartDetail findBycartDetailId(Integer cartDetailId);
+	public CartDetail findBycartDetailId(Long cartDetailId);
+
+	public void deleteByCartUserId(Long userId);
 }

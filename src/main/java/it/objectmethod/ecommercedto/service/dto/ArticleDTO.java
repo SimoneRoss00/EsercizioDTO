@@ -2,7 +2,7 @@ package it.objectmethod.ecommercedto.service.dto;
 
 public class ArticleDTO {
 
-	private Integer articleId;
+	private Long articleId;
 
 	private String articleName;
 
@@ -10,11 +10,13 @@ public class ArticleDTO {
 
 	private String articlePrice;
 
-	public Integer getArticleId() {
+	private String articleImg;
+
+	public Long getArticleId() {
 		return articleId;
 	}
 
-	public void setArticleId(Integer articleId) {
+	public void setArticleId(Long articleId) {
 		this.articleId = articleId;
 	}
 
@@ -40,6 +42,14 @@ public class ArticleDTO {
 
 	public void setArticlePrice(String articlePrice) {
 		this.articlePrice = articlePrice;
+	}
+
+	public String getArticleImg() {
+		return articleImg;
+	}
+
+	public void setArticleImg(String articleImg) {
+		this.articleImg = articleImg;
 	}
 
 }

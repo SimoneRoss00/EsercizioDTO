@@ -9,11 +9,11 @@ import org.springframework.stereotype.Repository;
 import it.objectmethod.ecommercedto.entity.Article;
 
 @Repository
-public interface ArticleRepository extends JpaRepository<Article, Integer> {
+public interface ArticleRepository extends JpaRepository<Article, Long> {
 
 	@Query(value = "SELECT article FROM Article article")
 	public List<Article> findAllArticle();
 
-	public Article findByIdArticle(Integer idArticle);
+	public Article findByIdArticle(Long idArticle);
 
 }

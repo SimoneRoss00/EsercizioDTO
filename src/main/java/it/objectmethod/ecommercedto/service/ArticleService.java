@@ -25,7 +25,7 @@ public class ArticleService {
 		return articleListDTO;
 	}
 
-	public ArticleDTO showArticleById(Integer idArticle) {
+	public ArticleDTO showArticleById(Long idArticle) {
 		Article article = articleRepo.findByIdArticle(idArticle);
 		ArticleDTO articleDto = articleMapper.toDto(article);
 		return articleDto;

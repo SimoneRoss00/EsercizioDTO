@@ -7,10 +7,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 @Table(name = "carrello")
@@ -18,11 +18,14 @@ public class Cart {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "id_carrello")
-	private Integer cartId;
-	@Column(name = "id_utente")
-	private Integer userId;
-	@JsonIgnore
+	private Long id;
+
+	@ManyToOne
+	@JoinColumn(name = "id_utente")
+	private User user;
+
 	@OneToMany
+	@JoinColumn(name = "id_carrello")
 	private List<CartDetail> cartDetailList;
 
 	public List<CartDetail> getCartDetailList() {
@@ -33,19 +36,20 @@ public class Cart {
 		this.cartDetailList = cartDetailList;
 	}
 
-	public Integer getCartId() {
-		return cartId;
+	public User getUser() {
+		return user;
 	}
 
-	public void setCartId(Integer cartId) {
-		this.cartId = cartId;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
-	public Integer getUserId() {
-		return userId;
+	public Long getId() {
+		return id;
 	}
 
-	public void setUserId(Integer userId) {
-		this.userId = userId;
+	public void setId(Long id) {
+		this.id = id;
 	}
+
 }

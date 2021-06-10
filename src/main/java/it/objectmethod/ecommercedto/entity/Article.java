@@ -13,21 +13,28 @@ public class Article {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Id
 	@Column(name = "id_articolo")
-	private Integer idArticle;
+	private Long idArticle;
+
 	@Column(name = "disponibilita")
 	private Integer quantity;
+
 	@Column(name = "codice_articolo")
 	private String codeArticle;
+
 	@Column(name = "nome_articolo")
 	private String articleName;
+
 	@Column(name = "prezzo_unitario")
 	private Integer unitaryPrice;
 
-	public Integer getIdArticle() {
+	@Column(name = "image")
+	private String articleImg;
+
+	public Long getIdArticle() {
 		return idArticle;
 	}
 
-	public void setIdArticle(Integer idArticle) {
+	public void setIdArticle(Long idArticle) {
 		this.idArticle = idArticle;
 	}
 
@@ -61,6 +68,14 @@ public class Article {
 
 	public void setUnitaryPrice(Integer unitaryPrice) {
 		this.unitaryPrice = unitaryPrice;
+	}
+
+	public String getArticleImg() {
+		return articleImg;
+	}
+
+	public void setArticleImg(String articleImg) {
+		this.articleImg = articleImg;
 	}
 
 }

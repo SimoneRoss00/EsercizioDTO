@@ -2,17 +2,9 @@ package it.objectmethod.ecommercedto.service.dto;
 
 public class UserDTO {
 
-	private Integer idUser;
+	private Long id;
 
 	private String userName;
-
-	public Integer getIdUser() {
-		return idUser;
-	}
-
-	public void setIdUser(Integer idUser) {
-		this.idUser = idUser;
-	}
 
 	public String getUserName() {
 		return userName;
@@ -20,6 +12,14 @@ public class UserDTO {
 
 	public void setUserName(String userName) {
 		this.userName = userName;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
 	}
 
 }

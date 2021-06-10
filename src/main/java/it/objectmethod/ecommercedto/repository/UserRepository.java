@@ -6,10 +6,10 @@ import org.springframework.stereotype.Repository;
 import it.objectmethod.ecommercedto.entity.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Integer> {
+public interface UserRepository extends JpaRepository<User, Long> {
 
 	public User findByUserNameAndPassword(String userName, String password);
 
-	public User findByIdUser(Integer idUser);
+	public User findByid(Long idUser);
 
 }

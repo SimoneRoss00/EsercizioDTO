@@ -1,20 +1,18 @@
 package it.objectmethod.ecommercedto.service.dto;
 
-import java.util.Date;
-
 public class OrderDTO {
 
-	private Integer orderId;
+	private Long orderId;
 
 	private String orderNumber;
 
-	private Date dateOrder;
+	private String dateOrder;
 
-	public Integer getOrderId() {
+	public Long getOrderId() {
 		return orderId;
 	}
 
-	public void setOrderId(Integer orderId) {
+	public void setOrderId(Long orderId) {
 		this.orderId = orderId;
 	}
 
@@ -26,12 +24,27 @@ public class OrderDTO {
 		this.orderNumber = orderNumber;
 	}
 
-	public Date getDateOrder() {
+	public String getDateOrder() {
 		return dateOrder;
 	}
 
-	public void setDateOrder(Date dateOrder) {
+	public void setDateOrder(String dateOrder) {
 		this.dateOrder = dateOrder;
 	}
+
+	@Override
+	public String toString() {
+		return orderId + ";" + orderNumber + ";" + dateOrder;
+	}
+
+//	public OrderDTO articoloFactoryFromCsv(String line) throws ParseException {
+//		DateFormat formatter = new SimpleDateFormat("yy-MM-dd");
+//		String[] lineSplitted = line.split(";");
+//		OrderDTO orderDTO = new OrderDTO();
+//		orderDTO.orderId = Long.parseLong(lineSplitted[0]);
+//		orderDTO.orderNumber = lineSplitted[1];
+//		orderDTO.dateOrder = formatter.parse(lineSplitted[2]);
+//		return orderDTO;
+//	}
 
 }
